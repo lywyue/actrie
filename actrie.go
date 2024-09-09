@@ -14,12 +14,11 @@ type BasicTrie struct {
         Root Node
 }
 
-var Basic BasicTrie
-
 func DefaultConstructBasicTrie() *BasicTrie {
-        Basic.Root.Failure = &Basic.Root
-        Basic.Root.Child = make(map[byte]*Node)
-        return &Basic
+        var basic BasicTrie
+        basic.Root.Failure = &basic.Root
+        basic.Root.Child = make(map[byte]*Node)
+        return &basic
 }
 
 func (ac *BasicTrie) Insert(key string) {
